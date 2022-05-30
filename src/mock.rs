@@ -1,4 +1,4 @@
-use crate::{Module, Trait};
+use crate::{Module, Config};
 use sp_core::H256;
 use frame_support::{impl_outer_origin, parameter_types, weights::Weight};
 use sp_runtime::{
@@ -54,7 +54,7 @@ parameter_types! {
 	pub const MaxLength: usize = 10;
 }
 
-impl Trait for Test {
+impl Config for Test {
 	type Event = ();
 	type MinLength = MinLength;
 	type MaxLength = MaxLength;
