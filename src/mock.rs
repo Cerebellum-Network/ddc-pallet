@@ -26,7 +26,9 @@ impl system::Config for Test {
 	type Origin = Origin;
 	type Call = ();
 	type Index = u64;
+	type BlockLength = ();
 	type BlockNumber = u64;
+	type BlockWeights = ();
 	type Hash = H256;
 	type Hashing = BlakeTwo256;
 	type AccountId = u64;
@@ -34,18 +36,13 @@ impl system::Config for Test {
 	type Header = Header;
 	type Event = ();
 	type BlockHashCount = BlockHashCount;
-	type MaximumBlockWeight = MaximumBlockWeight;
 	type DbWeight = ();
-	type BlockExecutionWeight = ();
-	type ExtrinsicBaseWeight = ();
-	type MaximumExtrinsicWeight = MaximumBlockWeight;
-	type MaximumBlockLength = MaximumBlockLength;
-	type AvailableBlockRatio = AvailableBlockRatio;
 	type Version = ();
-	type PalletInfo = ();
 	type AccountData = ();
 	type OnNewAccount = ();
 	type OnKilledAccount = ();
+	type PalletInfo = PalletInfo;
+	type SS58Prefix = ();
 	type SystemWeightInfo = ();
 }
 
