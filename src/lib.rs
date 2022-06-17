@@ -7,6 +7,7 @@ use frame_support::{
 	traits::{ Get },
 };
 use frame_system::ensure_signed;
+use sp_std::convert::TryInto;
 
 /// Edit this file to define custom logic or remove it if it is not needed.
 /// Learn more about FRAME and the core library of Substrate FRAME pallets:
