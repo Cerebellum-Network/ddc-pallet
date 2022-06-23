@@ -26,8 +26,8 @@ frame_support::construct_runtime!(
 		NodeBlock = Block, 
 		UncheckedExtrinsic = UncheckedExtrinsic, 
 	{
-		System: system::{Module, Call, Config, Storage, Event<T>},
-		CereDDCModule: pallet_cere_ddc::{Module, Call, Storage, Event<T>},
+		System: system::{Pallet, Call, Config, Storage, Event<T>},
+		CereDDCModule: pallet_cere_ddc::{Pallet, Call, Storage, Event<T>},
 	}
 );
 
@@ -54,6 +54,7 @@ impl system::Config for Test {
 	type PalletInfo = PalletInfo;
 	type SS58Prefix = ();
 	type SystemWeightInfo = ();
+	type OnSetCode = ();
 }
 
 parameter_types! {
