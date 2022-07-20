@@ -1,4 +1,4 @@
-use crate::{Module, Trait};
+use crate::{Module, Config};
 use sp_core::H256;
 use frame_support::{impl_outer_origin, parameter_types, weights::Weight};
 use sp_runtime::{
@@ -21,7 +21,7 @@ parameter_types! {
 	pub const AvailableBlockRatio: Perbill = Perbill::from_percent(75);
 }
 
-impl system::Trait for Test {
+impl system::Config for Test {
 	type BaseCallFilter = ();
 	type Origin = Origin;
 	type Call = ();
@@ -34,19 +34,15 @@ impl system::Trait for Test {
 	type Header = Header;
 	type Event = ();
 	type BlockHashCount = BlockHashCount;
-	type MaximumBlockWeight = MaximumBlockWeight;
 	type DbWeight = ();
-	type BlockExecutionWeight = ();
-	type ExtrinsicBaseWeight = ();
-	type MaximumExtrinsicWeight = MaximumBlockWeight;
-	type MaximumBlockLength = MaximumBlockLength;
-	type AvailableBlockRatio = AvailableBlockRatio;
 	type Version = ();
 	type PalletInfo = ();
 	type AccountData = ();
 	type OnNewAccount = ();
 	type OnKilledAccount = ();
 	type SystemWeightInfo = ();
+	type BlockWeights = ();
+	type BlockLength = ();
 }
 
 parameter_types! {
@@ -54,7 +50,7 @@ parameter_types! {
 	pub const MaxLength: usize = 10;
 }
 
-impl Trait for Test {
+impl Config for Test {
 	type Event = ();
 	type MinLength = MinLength;
 	type MaxLength = MaxLength;
